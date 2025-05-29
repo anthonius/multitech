@@ -1,7 +1,7 @@
 <template>
   <div>
     <v-container class="py-8 py-md-16">
-      <h1 class="text-h4 text-md-h3 mb-8">Our Projects</h1>
+      <h1 class="text-h4 text-md-h3 mb-8 text-white">Proyek Kami</h1>
       
       <v-row>
         <v-col

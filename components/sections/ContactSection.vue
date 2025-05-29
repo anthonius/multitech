@@ -3,10 +3,10 @@
     <v-row justify="center">
       <v-col cols="12" sm="10" md="8">
         <v-card class="pa-4 pa-md-6">
-          <h2 class="text-h4 text-md-h3 text-center mb-6">Contact Us</h2>
+          <h3 class="text-h4 text-md-h3 text-center mb-6">Kontak Kami</h3>
           <v-form @submit.prevent>
             <v-text-field
-              label="Name"
+              label="Nama"
               variant="outlined"
               class="mb-4"
             ></v-text-field>
@@ -15,8 +15,13 @@
               variant="outlined"
               class="mb-4"
             ></v-text-field>
+            <v-text-field
+              label="No. HP"
+              variant="outlined"
+              class="mb-4"
+            ></v-text-field>
             <v-textarea
-              label="Message"
+              label="Pesan"
               variant="outlined"
               class="mb-4"
             ></v-textarea>
@@ -25,8 +30,9 @@
               size="large"
               block
               type="submit"
+              class="rounded-lg"
             >
-              Send Message
+              Kirim pesan
             </v-btn>
           </v-form>
         </v-card>

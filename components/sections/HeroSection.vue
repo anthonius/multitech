@@ -8,7 +8,7 @@
           <br />Perancah Besi Konstruksi
         </h2>
         <p class="text-h6 text-white mb-8">
-          Discover innovative solutions for your business needs
+          Temukan solusi inovatif untuk keperluan bisnis Anda
         </p>
         <v-btn 
           color="white" 
@@ -16,7 +16,7 @@
           class="text-primary"
           to="/contact"
         >
-          Contact Us
+          Hubungi Kami
         </v-btn>
       </v-col>
       <v-col cols="12" md="6" class="text-center mt-8 mt-md-0">

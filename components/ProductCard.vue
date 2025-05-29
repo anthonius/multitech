@@ -12,7 +12,7 @@
     </v-card-text>
     <v-card-actions class="pa-4">
       <v-btn color="primary" block class="rounded-lg" @click="showDialog = true">
-        Learn More
+        Lihat
       </v-btn>
     </v-card-actions>
 
@@ -52,7 +52,7 @@
             to="/contact"
             @click="showDialog = false"
           >
-            Contact Us
+            Hubungi Kami
           </v-btn>
         </v-card-actions>
       </v-card>

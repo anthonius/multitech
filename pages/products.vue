@@ -1,15 +1,15 @@
 <template>
   <div>
     <v-container class="py-8 py-md-16">
-      <h1 class="text-h4 text-md-h3 mb-8">Our Products</h1>
+      <h1 class="text-h4 text-md-h3 mb-8 text-white">Produk Kami</h1>
       
-      <v-card class="mb-8">
+      <v-card class="mb-8 rounded-lg">
         <v-tabs
           v-model="activeTab"
           color="primary"
           align-tabs="center"
         >
-          <v-tab value="all">All</v-tab>
+          <v-tab value="all">Semua</v-tab>
           <v-tab value="aksesoris">Aksesoris</v-tab>
           <v-tab value="bekisting">Bekisting Kolom, Balok dan Lantai</v-tab>
           <v-tab value="mainframe">Main Frame</v-tab>

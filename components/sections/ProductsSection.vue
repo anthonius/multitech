@@ -1,6 +1,6 @@
 <template>
-  <v-container id="products" class="py-8 py-md-16 bg-white">
-    <h2 class="text-h4 text-md-h3 text-center mb-8">Our Products</h2>
+  <v-container id="products" class="py-8 py-md-16 bg-white rounded-lg">
+    <h2 class="text-h4 text-md-h3 text-center mb-8">Produk Kami</h2>
     
     <v-carousel
       hide-delimiter-background
@@ -32,9 +32,9 @@
         color="primary"
         to="/products"
         size="large"
-        class="text-none"
+        class="text-none rounded-lg"
       >
-        See All Products
+        Lihat semua produk
       </v-btn>
     </div>
   </v-container>

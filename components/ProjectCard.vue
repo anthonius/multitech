@@ -46,7 +46,7 @@
             to="/contact"
             @click="showDialog = false"
           >
-            Contact Us
+            Hubungi Kami
           </v-btn>
         </v-card-actions>
       </v-card>
