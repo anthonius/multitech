@@ -5,8 +5,8 @@
     <v-carousel
       hide-delimiter-background
       show-arrows="hover"
-      height="400"
-      class="rounded-lg"
+      height="500"
+      class="rounded-lg mb-8"
       :interval="5000"
       cycle
     >
@@ -14,39 +14,38 @@
         v-for="(group, i) in productGroups"
         :key="i"
       >
-        <v-row class="fill-height">
+        <v-row class="fill-height pa-4">
           <v-col
             v-for="product in group"
             :key="product.id"
             cols="12"
             md="4"
           >
-            <v-card class="h-100 rounded-lg" elevation="2">
-              <v-img
-                :src="product.image"
-                height="200"
-                cover
-                class="rounded-t-lg"
-              ></v-img>
-              <v-card-title class="text-h6 text-md-h5">{{ product.name }}</v-card-title>
-              <v-card-text>
-                {{ product.description }}
-              </v-card-text>
-              <v-card-actions>
-                <v-btn color="primary" block class="rounded-lg">Learn More</v-btn>
-              </v-card-actions>
-            </v-card>
+            <ProductCard :product="product" />
           </v-col>
         </v-row>
       </v-carousel-item>
     </v-carousel>
+
+    <div class="text-center">
+      <v-btn
+        color="primary"
+        to="/products"
+        size="large"
+        class="text-none"
+      >
+        See All Products
+      </v-btn>
+    </div>
   </v-container>
 </template>
 
 <script setup>
 import { useDisplay } from 'vuetify'
+import ProductCard from '~/components/ProductCard.vue'
 
 const display = useDisplay()
+
 const products = [
   {
     id: 1,
