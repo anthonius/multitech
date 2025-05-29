@@ -1,6 +1,12 @@
 <template>
-  <div>
-    <NuxtRouteAnnouncer />
-    <NuxtWelcome />
-  </div>
+  <NuxtLayout>
+    <NuxtPage />
+  </NuxtLayout>
 </template>
+
+<script setup>
+// Your component logic here
+</script>
+
+<style>
+</style>

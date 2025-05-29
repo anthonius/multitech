@@ -1,0 +1,17 @@
+.v-application {
+  background-color: #051F6A !important;
+}
+
+.hero-section {
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+}
+
+.bg-white {
+  background-color: white !important;
+}
+
+.text-primary {
+  color: #051F6A !important;
+} 
