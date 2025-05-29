@@ -20,6 +20,7 @@
             >
               Products
             </v-btn>
+            <v-btn variant="text" color="white" class="mx-2" to="/projects">Projects</v-btn>
             <v-btn variant="text" color="white" class="mx-2" to="/contact">Contact</v-btn>
           </v-col>
           <v-col cols="auto" class="d-md-none">
@@ -43,6 +44,7 @@
           title="Products" 
           color="white"
         ></v-list-item>
+        <v-list-item to="/projects" title="Projects" color="white"></v-list-item>
         <v-list-item to="/contact" title="Contact" color="white"></v-list-item>
       </v-list>
     </v-navigation-drawer>

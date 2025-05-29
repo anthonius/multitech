@@ -66,6 +66,7 @@ const menuItems = [
   { title: 'Home', to: '/' },
   { title: 'About', to: '/about' },
   { title: 'Products', to: '/' },
+  { title: 'Projects', to: '/projects' },
   { title: 'Contact', to: '/contact' }
 ]
 </script> 
