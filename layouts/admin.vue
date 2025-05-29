@@ -1,38 +1,25 @@
 <template>
   <v-app>
-    <!-- Admin Header -->
-    <v-app-bar color="#051F6A" elevation="0">
-      <v-container>
-        <v-row align="center">
-          <v-col cols="auto">
-            <h2 class="text-white">Admin Dashboard</h2>
-          </v-col>
-          <v-spacer></v-spacer>
-          <v-col cols="auto">
-            <v-btn variant="text" color="white" class="mx-2" to="/admin/dashboard">
-              Dashboard
-            </v-btn>
-            <v-btn variant="text" color="white" class="mx-2" to="/admin/users">
-              Users
-            </v-btn>
-            <v-btn variant="text" color="white" class="mx-2" to="/admin/settings">
-              Settings
-            </v-btn>
-            <v-btn variant="text" color="white" class="mx-2" @click="logout">
-              Logout
-            </v-btn>
-          </v-col>
-        </v-row>
-      </v-container>
-    </v-app-bar>
-
-    <!-- Admin Sidebar -->
     <v-navigation-drawer
       v-model="drawer"
-      color="#051F6A"
-      theme="dark"
+      permanent
+      color="white"
+      theme="light"
     >
       <v-list>
+        <v-list-item class="mb-4">
+          <template v-slot:prepend>
+            <v-avatar color="primary" size="40">
+              <span class="text-h6 text-white">{{ username.charAt(0).toUpperCase() }}</span>
+            </v-avatar>
+          </template>
+          <v-list-item-title class="text-subtitle-1 font-weight-medium">
+            Hi, {{ username }}
+          </v-list-item-title>
+        </v-list-item>
+
+        <v-divider class="mb-4"></v-divider>
+
         <v-list-item
           v-for="(item, i) in menuItems"
           :key="i"
@@ -41,10 +28,23 @@
           :title="item.title"
         ></v-list-item>
       </v-list>
+
+      <template v-slot:append>
+        <div class="pa-2">
+          <v-btn
+            color="error"
+            variant="text"
+            prepend-icon="mdi-logout"
+            block
+            @click="handleLogout"
+          >
+            Logout
+          </v-btn>
+        </div>
+      </template>
     </v-navigation-drawer>
 
-    <!-- Main Content -->
-    <v-main>
+    <v-main class="bg-blue-grey-lighten-5">
       <v-container fluid>
         <slot />
       </v-container>
@@ -58,15 +58,18 @@ import { useRouter } from 'vue-router'
 
 const router = useRouter()
 const drawer = ref(true)
+const username = ref('Admin') // This will be replaced with actual username from auth
 
 const menuItems = [
   { title: 'Dashboard', icon: 'mdi-view-dashboard', to: '/admin/dashboard' },
-  { title: 'Users', icon: 'mdi-account-group', to: '/admin/users' },
-  { title: 'Settings', icon: 'mdi-cog', to: '/admin/settings' },
+  { title: 'Products', icon: 'mdi-package-variant', to: '/admin/products' },
+  { title: 'Projects', icon: 'mdi-image-multiple', to: '/admin/projects' },
+  { title: 'Contact', icon: 'mdi-email', to: '/admin/contact' },
+  { title: 'Content', icon: 'mdi-file-document', to: '/admin/content' }
 ]
 
-const logout = () => {
-  // Add your logout logic here
+const handleLogout = () => {
+  // Add logout logic here
   router.push('/login')
 }
 </script> 

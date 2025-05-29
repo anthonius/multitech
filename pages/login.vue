@@ -49,10 +49,8 @@ const loading = ref(false)
 const handleLogin = async () => {
   loading.value = true
   try {
-    // Add your authentication logic here
-    // For example, using a composable or API call
-    await new Promise(resolve => setTimeout(resolve, 1000)) // Simulated API call
-    router.push('/admin/dashboard')
+    // Direct redirect to dashboard for development
+    await router.push('/admin/dashboard')
   } catch (error) {
     console.error('Login failed:', error)
   } finally {
