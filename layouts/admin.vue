@@ -1,8 +1,15 @@
 <template>
   <v-app>
+    <!-- Mobile App Bar -->
+    <v-app-bar v-if="$vuetify.display.mobile" color="white" elevation="1">
+      <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
+      <v-toolbar-title>Admin Panel</v-toolbar-title>
+    </v-app-bar>
+
+    <!-- Navigation Drawer -->
     <v-navigation-drawer
       v-model="drawer"
-      permanent
+      :permanent="!$vuetify.display.mobile"
       color="white"
       theme="light"
     >
@@ -72,4 +79,10 @@ const handleLogout = () => {
   // Add logout logic here
   router.push('/login')
 }
-</script> 
+</script>
+
+<style scoped>
+.v-navigation-drawer {
+  border-right: 1px solid rgba(0, 0, 0, 0.12);
+}
+</style> 
