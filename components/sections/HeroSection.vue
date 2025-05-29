@@ -2,23 +2,28 @@
   <v-container class="hero-section py-8 py-md-16">
     <v-row align="center" class="fill-height">
       <v-col cols="12" md="6" class="text-center text-md-left">
-        <h1 class="text-h3 text-md-h2 font-weight-bold text-white mb-4">
+        <h2 class="text-h4 text-md-h3 font-weight-bold text-white mb-4">
           Pabrikasi,
           <br />Sewa Scaffolding &
           <br />Perancah Besi Konstruksi
-        </h1>
+        </h2>
         <p class="text-h6 text-white mb-8">
           Discover innovative solutions for your business needs
         </p>
-        <v-btn color="white" size="large" class="text-primary">
-          Get Started
+        <v-btn 
+          color="white" 
+          size="large" 
+          class="text-primary"
+          to="/contact"
+        >
+          Contact Us
         </v-btn>
       </v-col>
       <v-col cols="12" md="6" class="text-center mt-8 mt-md-0">
         <v-carousel
           hide-delimiter-background
           show-arrows="hover"
-          height="400"
+          height="auto"
           class="rounded-lg"
           :interval="3000"
           cycle
@@ -29,8 +34,8 @@
           >
             <v-img
               :src="image.src"
-              height="400"
-              cover
+              :aspect-ratio="16/9"
+              contain
               class="rounded-lg"
             ></v-img>
           </v-carousel-item>
