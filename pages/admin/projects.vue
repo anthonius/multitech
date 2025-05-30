@@ -1,14 +1,24 @@
 <template>
   <div>
-    <div class="d-flex justify-space-between align-center mb-6">
-      <h1 class="text-h4">Projects Management</h1>
-      <v-btn
-        color="primary"
-        prepend-icon="mdi-plus"
-        @click="openDialog()"
-      >
-        Add Project
-      </v-btn>
+    <div class="d-flex flex-column flex-md-row justify-space-between align-start align-md-center mb-6">
+      <h1 class="text-h4 mb-4 mb-md-0">Projects Management</h1>
+      <div class="d-flex flex-column flex-md-row align-start align-md-center">
+        <v-text-field
+          v-model="search"
+          prepend-inner-icon="mdi-magnify"
+          label="Search by name"
+          single-line
+          hide-details
+          class="search-field mb-4 mb-md-0 mr-md-4"
+        ></v-text-field>
+        <v-btn
+          color="primary"
+          prepend-icon="mdi-plus"
+          @click="openDialog()"
+        >
+          Add Project
+        </v-btn>
+      </div>
     </div>
 
     <!-- Desktop Table -->
@@ -23,7 +33,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr v-for="project in projects" :key="project.id" class="project-row">
+          <tr v-for="project in filteredProjects" :key="project.id" class="project-row">
             <td class="pa-4">
               <v-img
                 :src="project.image"
@@ -60,7 +70,7 @@
     <!-- Mobile Cards -->
     <div class="d-md-none">
       <v-card
-        v-for="project in projects"
+        v-for="project in filteredProjects"
         :key="project.id"
         class="mb-4"
       >
@@ -217,6 +227,7 @@ const deleteDialog = ref(false)
 const valid = ref(false)
 const form = ref(null)
 const imageInput = ref(null)
+const search = ref('')
 
 // Mock data - replace with actual data from your backend
 const projects = ref([
@@ -288,6 +299,14 @@ const deleteProject = () => {
   projects.value.splice(index, 1)
   deleteDialog.value = false
 }
+
+// Add computed property for filtered projects
+const filteredProjects = computed(() => {
+  if (!search.value) return projects.value
+  return projects.value.filter(project => 
+    project.name.toLowerCase().includes(search.value.toLowerCase())
+  )
+})
 </script>
 
 <style scoped>
@@ -303,9 +322,17 @@ const deleteProject = () => {
   border-bottom: none;
 }
 
+.search-field {
+  width: 500px;
+}
+
 @media (max-width: 960px) {
   .v-card {
     margin-bottom: 16px;
+  }
+  
+  .search-field {
+    width: 100%;
   }
 }
 </style>

@@ -4,15 +4,13 @@
       <v-row>
         <v-col cols="12" md="4" class="mb-6 mb-md-0">
           <h3 class="text-h6 text-md-h5 text-white mb-4">PT. Multitech Konstruksi Utama</h3>
-          <p class="text-white">
-            <div>
-              Pabrikasi, Sewa Scaffolding & Perancah Besi Konstruksi
-            </div>
-            <br />
-            <div>
-              Copyright © 2025 All rights reserved
-            </div>
-          </p>
+          <div class="text-white">
+            Pabrikasi, Sewa Scaffolding & Perancah Besi Konstruksi
+          </div>
+          <br />
+          <div class="text-white">
+            Copyright © 2025 All rights reserved
+          </div>
         </v-col>
         <v-col cols="12" md="4" class="mb-6 mb-md-0">
           <h3 class="text-h6 text-md-h5 text-white mb-4">Jelajahi</h3>
