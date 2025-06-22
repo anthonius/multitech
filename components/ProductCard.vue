@@ -47,6 +47,7 @@
         <v-card-actions class="pa-4">
           <v-btn
             to="/products"
+            @click="showDialog = false"
             size="large"
             class="text-none rounded-lg underline-btn"
           >
