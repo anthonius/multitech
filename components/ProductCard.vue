@@ -11,7 +11,7 @@
       {{ plainDescription }}
     </v-card-text>
     <v-card-actions class="pa-4">
-      <v-btn color="primary" block class="rounded-lg" @click="showDialog = true">
+      <v-btn block class="rounded-lg see-btn" @click="showDialog = true">
         Lihat
       </v-btn>
     </v-card-actions>
@@ -46,9 +46,15 @@
         </v-card-text>
         <v-card-actions class="pa-4">
           <v-btn
+            to="/products"
+            size="large"
+            class="text-none rounded-lg underline-btn"
+          >
+            Lihat semua produk
+          </v-btn>
+          <v-btn
             color="primary"
-            block
-            class="rounded-lg"
+            class="rounded-lg see-btn"
             to="/contact"
             @click="showDialog = false"
           >
@@ -106,5 +112,16 @@ const formattedDescription = computed(() => {
   min-height: 6em;
   max-height: 8.5em;
   white-space: normal;
+}
+
+.see-btn {
+  border-style: solid;
+  border-color: #C0281C;
+  border-width: 1px;
+}
+
+.underline-btn {
+  text-decoration: underline;
+  text-underline-offset: 4px;
 }
 </style>

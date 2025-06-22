@@ -11,6 +11,7 @@
     <div v-else>
       <v-carousel
         hide-delimiter-background
+        hide-delimiters
         show-arrows="hover"
         height="500"
         class="rounded-lg mb-8"
