@@ -1,14 +1,14 @@
 <template>
-  <v-card class="h-100 rounded-lg" elevation="2">
+  <v-card class="h-100 rounded-lg d-flex flex-column" elevation="2">
     <v-img
       :src="product.image"
-      height="200"
       cover
+      height="200"
       class="rounded-t-lg"
     ></v-img>
     <v-card-title class="text-h6 text-md-h5 pa-4">{{ product.name }}</v-card-title>
-    <v-card-text class="pa-4">
-      {{ product.description }}
+    <v-card-text class="pa-4 flex-grow-1 card-description">
+      {{ plainDescription }}
     </v-card-text>
     <v-card-actions class="pa-4">
       <v-btn color="primary" block class="rounded-lg" @click="showDialog = true">
@@ -33,8 +33,8 @@
           ></v-btn>
           <v-img
             :src="product.image"
-            :aspect-ratio="1"
             cover
+            height="350"
             class="rounded-t-lg"
           ></v-img>
         </div>
@@ -42,7 +42,7 @@
           {{ product.name }}
         </v-card-title>
         <v-card-text class="pa-4">
-          {{ product.description }}
+          <span v-html="formattedDescription"></span>
         </v-card-text>
         <v-card-actions class="pa-4">
           <v-btn
@@ -61,7 +61,7 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
 
 const props = defineProps({
   product: {
@@ -71,6 +71,16 @@ const props = defineProps({
 })
 
 const showDialog = ref(false)
+
+const plainDescription = computed(() => {
+  // Remove line breaks for clamping in card
+  return (props.product.description || '').replace(/\n/g, ' ')
+})
+
+const formattedDescription = computed(() => {
+  // For dialog, keep line breaks
+  return (props.product.description || '').replace(/\n/g, '<br>')
+})
 </script>
 
 <style scoped>
@@ -85,5 +95,16 @@ const showDialog = ref(false)
 
 .position-absolute {
   position: absolute;
+}
+
+.card-description {
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-height: 6em;
+  max-height: 8.5em;
+  white-space: normal;
 }
 </style>

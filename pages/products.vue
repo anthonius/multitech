@@ -18,7 +18,13 @@
           <v-tab value="excavator">Excavator</v-tab>
         </v-tabs>
 
-        <v-window v-model="activeTab">
+        <div v-if="loading" class="d-flex justify-center align-center py-16">
+          <v-progress-circular indeterminate color="primary" size="64" />
+        </div>
+        <v-alert v-else-if="error" type="error" class="mb-8">
+          {{ error }}
+        </v-alert>
+        <v-window v-else v-model="activeTab">
           <!-- All Products -->
           <v-window-item value="all">
             <v-container>
@@ -151,77 +157,19 @@
 </template>
 
 <script setup>
+import { ref, computed, onMounted } from 'vue'
+import ProductCard from '~/components/ProductCard.vue'
+import { useProducts } from '~/composables/useProducts'
+
 const activeTab = ref('all')
+const { products, loading, error, fetchProducts } = useProducts()
 
-// All products
-const products = [
-  {
-    id: 1,
-    name: 'Product 1',
-    description: 'Description for product 1',
-    image: 'https://via.placeholder.com/400x300'
-  },
-  {
-    id: 2,
-    name: 'Product 2',
-    description: 'Description for product 2',
-    image: 'https://via.placeholder.com/400x300'
-  },
-  {
-    id: 3,
-    name: 'Product 3',
-    description: 'Description for product 3',
-    image: 'https://via.placeholder.com/400x300'
-  },
-  {
-    id: 4,
-    name: 'Product 4',
-    description: 'Description for product 4',
-    image: 'https://via.placeholder.com/400x300'
-  },
-  {
-    id: 5,
-    name: 'Product 5',
-    description: 'Description for product 5',
-    image: 'https://via.placeholder.com/400x300'
-  },
-  {
-    id: 6,
-    name: 'Product 6',
-    description: 'Description for product 6',
-    image: 'https://via.placeholder.com/400x300'
-  },
-  {
-    id: 7,
-    name: 'Product 7',
-    description: 'Description for product 7',
-    image: 'https://via.placeholder.com/400x300'
-  },
-  {
-    id: 8,
-    name: 'Product 8',
-    description: 'Description for product 8',
-    image: 'https://via.placeholder.com/400x300'
-  },
-  {
-    id: 9,
-    name: 'Product 9',
-    description: 'Description for product 9',
-    image: 'https://via.placeholder.com/400x300'
-  },
-  {
-    id: 10,
-    name: 'Product 10',
-    description: 'Description for product 10',
-    image: 'https://via.placeholder.com/400x300'
-  }
-]
+onMounted(fetchProducts)
 
-// Categorized products
-const aksesorisProducts = computed(() => products.slice(0, 2))
-const bekistingProducts = computed(() => products.slice(2, 4))
-const mainframeProducts = computed(() => products.slice(4, 6))
-const pipaProducts = computed(() => products.slice(6, 7))
-const postshoreProducts = computed(() => products.slice(7, 8))
-const excavatorProducts = computed(() => products.slice(8, 10))
+const aksesorisProducts = computed(() => products.value.filter(p => p.category === 'Aksesoris'))
+const bekistingProducts = computed(() => products.value.filter(p => p.category === 'Bekisting Kolom, Balok dan Lantai'))
+const mainframeProducts = computed(() => products.value.filter(p => p.category === 'Main Frame'))
+const pipaProducts = computed(() => products.value.filter(p => p.category === 'Pipa Galvanis'))
+const postshoreProducts = computed(() => products.value.filter(p => p.category === 'Post Shore'))
+const excavatorProducts = computed(() => products.value.filter(p => p.category === 'Excavator'))
 </script> 
