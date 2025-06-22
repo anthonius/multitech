@@ -3,7 +3,13 @@
     <v-container class="py-8 py-md-16">
       <h1 class="text-h4 text-md-h3 mb-8 text-white red-mark">Proyek Kami</h1>
       
-      <v-row>
+      <div v-if="loading" class="d-flex justify-center align-center py-16">
+        <v-progress-circular indeterminate color="primary" size="64" />
+      </div>
+      <v-alert v-else-if="error" type="error" class="mb-8">
+        {{ error }}
+      </v-alert>
+      <v-row v-else>
         <v-col
           v-for="project in projects"
           :key="project.id"
@@ -20,42 +26,11 @@
 </template>
 
 <script setup>
-const projects = [
-  {
-    id: 1,
-    name: 'Project 1',
-    description: 'Description for project 1',
-    image: 'https://via.placeholder.com/400x300'
-  },
-  {
-    id: 2,
-    name: 'Project 2',
-    description: 'Description for project 2',
-    image: 'https://via.placeholder.com/400x300'
-  },
-  {
-    id: 3,
-    name: 'Project 3',
-    description: 'Description for project 3',
-    image: 'https://via.placeholder.com/400x300'
-  },
-  {
-    id: 4,
-    name: 'Project 4',
-    description: 'Description for project 4',
-    image: 'https://via.placeholder.com/400x300'
-  },
-  {
-    id: 5,
-    name: 'Project 5',
-    description: 'Description for project 5',
-    image: 'https://via.placeholder.com/400x300'
-  },
-  {
-    id: 6,
-    name: 'Project 6',
-    description: 'Description for project 6',
-    image: 'https://via.placeholder.com/400x300'
-  }
-]
+import { onMounted } from 'vue'
+import ProjectCard from '~/components/ProjectCard.vue'
+import { useProjects } from '~/composables/useProjects'
+
+const { projects, loading, error, fetchProjects } = useProjects()
+
+onMounted(fetchProjects)
 </script> 

@@ -13,42 +13,25 @@
     <!-- Project Detail Dialog -->
     <v-dialog
       v-model="showDialog"
-      max-width="500"
+      max-width="900"
       class="project-dialog"
     >
-      <v-card class="rounded-lg">
+      <v-card class="rounded-lg pa-0" style="background: transparent; box-shadow: none;">
         <div class="position-relative">
           <v-btn
             icon="mdi-close"
             color="white"
-            class="position-absolute"
-            style="top: 8px; right: 8px; z-index: 1;"
+            class="position-absolute close-btn"
+            style="top: 16px; right: 16px; z-index: 2; background: rgba(0,0,0,0.5);"
             @click="showDialog = false"
           ></v-btn>
           <v-img
-            :src="project.image"
-            :aspect-ratio="1"
+            :src="project.imageLargeUrl || project.image"
             cover
-            class="rounded-t-lg"
+            class="rounded-lg dialog-image"
+            style="max-height: 95vh; width: 100%; object-fit: contain; background: #222;"
           ></v-img>
         </div>
-        <v-card-title class="text-h5 pa-4">
-          {{ project.name }}
-        </v-card-title>
-        <v-card-text class="pa-4">
-          {{ project.description }}
-        </v-card-text>
-        <v-card-actions class="pa-4">
-          <v-btn
-            color="primary"
-            block
-            class="rounded-lg"
-            to="/contact"
-            @click="showDialog = false"
-          >
-            Hubungi Kami
-          </v-btn>
-        </v-card-actions>
       </v-card>
     </v-dialog>
   </v-card>
@@ -69,15 +52,28 @@ const showDialog = ref(false)
 
 <style scoped>
 .project-dialog :deep(.v-overlay__content) {
-  max-height: 90vh;
+  max-width: 900px !important;
+  max-height: 95vh !important;
   overflow-y: auto;
+  background: transparent;
 }
-
 .position-relative {
   position: relative;
 }
-
 .position-absolute {
   position: absolute;
+}
+.close-btn {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  z-index: 2;
+}
+.dialog-image {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+  max-height: 95vh;
+  background: #222;
 }
 </style> 
