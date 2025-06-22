@@ -21,9 +21,13 @@
         </v-btn>
       </v-col>
       <v-col cols="12" md="6" class="text-center mt-8 mt-md-0">
+        <div v-if="loading" class="d-flex justify-center align-center py-16">
+          <v-progress-circular indeterminate color="primary" size="64" />
+        </div>
         <v-carousel
+          v-else
           hide-delimiter-background
-          show-arrows="hover"
+          :show-arrows="false"
           height="auto"
           class="rounded-lg"
           :interval="3000"
@@ -47,7 +51,13 @@
 </template>
 
 <script setup>
-const heroImages = [
+import { ref, onMounted } from 'vue'
+import { useProjects } from '~/composables/useProjects'
+
+const loading = ref(true)
+const heroImages = ref([])
+
+const fallbackImages = [
   {
     src: 'https://multitechscaffolding.com/imagesfile/20140807221113_745.jpeg',
     alt: 'Hero Image 1'
@@ -65,6 +75,19 @@ const heroImages = [
     alt: 'Hero Image 4'
   }
 ]
+
+const { fetchHeroProjects } = useProjects()
+
+onMounted(async () => {
+  loading.value = true
+  const projects = await fetchHeroProjects()
+  if (projects && projects.length > 0) {
+    heroImages.value = projects.map(p => ({ src: p.imageLargeUrl || p.image, alt: p.name }))
+  } else {
+    heroImages.value = fallbackImages
+  }
+  loading.value = false
+})
 </script>
 
 <style scoped>

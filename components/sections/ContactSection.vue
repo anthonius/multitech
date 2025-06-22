@@ -3,7 +3,7 @@
     <v-row justify="center">
       <v-col cols="12" sm="10" md="8">
         <v-card class="pa-4 pa-md-6">
-          <h3 class="text-h4 text-md-h3 text-center mb-6">Kontak Kami</h3>
+          <h3 class="text-h4 text-md-h3 text-center mb-6">Hubungi Kami</h3>
           <v-form @submit.prevent>
             <v-text-field
               label="Nama"

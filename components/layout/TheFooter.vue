@@ -25,7 +25,7 @@
           </v-list>
         </v-col>
         <v-col cols="12" md="4">
-          <h3 class="text-h6 text-md-h5 text-white mb-4 red-mark">Kontak kami</h3>
+          <h3 class="text-h6 text-md-h5 text-white mb-4 red-mark">Hubungi kami</h3>
           <p class="text-white">
             Email: Marketing_BDJ@multitechscaffolding.com<br />
             Telepon: (0511) 5511372 / 6748802<br />
