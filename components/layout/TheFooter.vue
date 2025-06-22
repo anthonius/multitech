@@ -3,7 +3,7 @@
     <v-container>
       <v-row>
         <v-col cols="12" md="4" class="mb-6 mb-md-0">
-          <h3 class="text-h6 text-md-h5 text-white mb-4">PT. Multitech Konstruksi Utama</h3>
+          <h3 class="text-h6 text-md-h5 text-white mb-4 red-mark">PT. Multitech Konstruksi Utama</h3>
           <div class="text-white">
             Pabrikasi, Sewa Scaffolding & Perancah Besi Konstruksi
           </div>
@@ -13,7 +13,7 @@
           </div>
         </v-col>
         <v-col cols="12" md="4" class="mb-6 mb-md-0">
-          <h3 class="text-h6 text-md-h5 text-white mb-4">Jelajahi</h3>
+          <h3 class="text-h6 text-md-h5 text-white mb-4 red-mark">Jelajahi</h3>
           <v-list bg-color="transparent">
             <v-list-item
               v-for="(item, i) in menuItems"
@@ -25,7 +25,7 @@
           </v-list>
         </v-col>
         <v-col cols="12" md="4">
-          <h3 class="text-h6 text-md-h5 text-white mb-4">Kontak kami</h3>
+          <h3 class="text-h6 text-md-h5 text-white mb-4 red-mark">Kontak kami</h3>
           <p class="text-white">
             Email: Marketing_BDJ@multitechscaffolding.com<br />
             Telepon: (0511) 5511372 / 6748802<br />

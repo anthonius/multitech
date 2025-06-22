@@ -2,14 +2,15 @@
   <v-container class="hero-section py-8 py-md-16">
     <v-row align="center" class="fill-height">
       <v-col cols="12" md="6" class="text-center text-md-left">
-        <h2 class="text-h4 text-md-h3 font-weight-bold text-white mb-4">
+        <h2 class="text-h4 text-md-h3 font-weight-bold text-white mb-4 red-mark">
           Pabrikasi,
           <br />Sewa Scaffolding &
           <br />Perancah Besi Konstruksi
         </h2>
-        <p class="text-h6 text-white mb-8">
+        <p class="text-h6 text-white mb-8 text-left">
           Temukan solusi inovatif untuk keperluan bisnis Anda
         </p>
+        <br /> <br />
         <v-btn 
           color="white" 
           size="large" 

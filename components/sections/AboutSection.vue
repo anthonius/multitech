@@ -2,12 +2,12 @@
   <v-container class="py-8 py-md-16">
     <v-row align="center">
       <v-col cols="12" md="6" class="order-2 order-md-1">
-        <h2 class="text-h4 text-md-h3 mb-4 text-white">Visi</h2>
+        <h2 class="text-h4 text-md-h3 mb-4 text-white red-mark">Visi</h2>
         <div class="text-body-1 text-white mb-4">
           SEBAGAI KOMUNITAS DUNIA KONSTRUKSI YANG  INSPIRATIF DENGAN ASPIRASI MEWUJUDKAN SUATU KEUNGGULAN YANG DIDASARKAN PADA KETERAMPILAN DAN PENGALAMAN TEKNIK.
         </div>
         
-        <h2 class="text-h4 text-md-h3 mb-4 text-white">Misi</h2>
+        <h2 class="text-h4 text-md-h3 mb-4 text-white red-mark">Misi</h2>
         <div class="text-body-1 text-white mb-4">
           MENGEMBANGKAN KEMAMPUAN ANAK BANGSA MEMBANGUN NEGERI DI BIDANG KONSTRUKSI DAN MERAIH KESUKSESAN DALAM KEHIDUPAN. 
         </div>

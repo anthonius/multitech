@@ -38,7 +38,7 @@
             class="rounded-t-lg"
           ></v-img>
         </div>
-        <v-card-title class="text-h5 pa-4">
+        <v-card-title class="text-h5 pa-4 red-mark">
           {{ product.name }}
         </v-card-title>
         <v-card-text class="pa-4">

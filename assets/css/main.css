@@ -15,3 +15,19 @@
 .text-primary {
   color: #051F6A !important;
 } 
+
+.red-mark {
+  position: relative;
+  display: inline-block; /* Ensures it only takes up content width */
+  padding-bottom: 20px;
+}
+
+.red-mark::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100px;
+  height: 3px;
+  background-color: #C0281C;
+}
