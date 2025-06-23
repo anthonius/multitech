@@ -5,7 +5,11 @@
         <v-row align="center">
           <v-col cols="auto">
             <NuxtLink to="/" class="text-decoration-none">
-              <h2 class="text-white">Multitech Scaffolding</h2>
+              <!-- <h2 class="text-white">Multitech Scaffolding</h2> -->
+               <v-img
+                src="https://api.dutasaranakonstruksi.com//uploads/thumbnail_logo_2b424eb596.jpeg"
+                width="100px"
+              ></v-img>
             </NuxtLink>
           </v-col>
           <v-spacer></v-spacer>

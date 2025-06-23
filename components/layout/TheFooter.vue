@@ -27,8 +27,8 @@
         <v-col cols="12" md="4">
           <h3 class="text-h6 text-md-h5 text-white mb-4 red-mark">Hubungi kami</h3>
           <p class="text-white">
-            Email: Marketing_BDJ@multitechscaffolding.com<br />
-            Telepon: (0511) 5511372 / 6748802<br />
+            Email: Marketing_BDJ@multitechscaffolding.co.id<br />
+            Telepon: (0511) 6129001 / 6748802<br />
             Alamat: Jl. Banjar Gawi Barat 1 No. 28 LIK Liang Anggang, Landasan Ulin Selatan, Kota Banjar Baru 70722, Kalimantan Selatan
           </p>
         </v-col>
