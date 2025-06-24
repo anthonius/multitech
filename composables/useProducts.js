@@ -10,7 +10,7 @@ export function useProducts() {
     loading.value = true
     error.value = null
     try {
-      const response = await $fetch(`${API_BASE_URL}/multitech-products/?populate=image`)
+      const response = await $fetch(`${API_BASE_URL}/multitech-products/?pagination[page]=1&pagination[pageSize]=100&populate=image`)
       products.value = response.data.map(item => {
         let imageUrl = ''
         const imageData = item.attributes.image?.data?.attributes

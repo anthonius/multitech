@@ -10,7 +10,7 @@ export function useProjects() {
     loading.value = true
     error.value = null
     try {
-      const response = await $fetch(`${API_BASE_URL}/multitech-projects/?populate=image`)
+      const response = await $fetch(`${API_BASE_URL}/multitech-projects/?pagination[page]=1&pagination[pageSize]=100&populate=image`)
       projects.value = response.data.map(item => {
         let imageUrl = ''
         let imageLargeUrl = ''
